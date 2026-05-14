@@ -1,0 +1,22 @@
+def main():
+   get_grocery()
+
+
+def get_grocery():
+   grocery = {}
+   while True: 
+    try:
+        item = input("").upper()
+        if item in grocery:
+           grocery[item] +=1
+        else:
+           grocery[item] = 1
+                          
+    except (EOFError):
+        for item in sorted(grocery):
+            print(f"{grocery[item]} {item}")
+        return
+
+if __name__ == "__main__":
+    main()  
+       
